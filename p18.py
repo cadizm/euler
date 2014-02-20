@@ -35,5 +35,54 @@
 # and requires a clever method! ;o)
 #
 
+# TODO: implement
+#
+#    3
+#   7 4
+#  2 4 6
+# 8 5 9 3
+#
+# =>
+#
+#     3
+#   10 7
+#  12 14 13
+# 20 19 23 16
+#
+# ==
+#
+# algorithm:
+#
+# for each row
+#   compute sum of self + max parent using sums from prev step
+#
+# starting from max bottom follow max parent to root
+#
+# indices:
+#
+#    0
+#   0 1
+#  0 1 2
+# 0 1 2 3
+#
+# 0:
+# 0: 0 ; 1: 0
+# 0: 0 ; 1: 0,1 ; 2: 1
+# 0: 0 ; 1: 0,1 ; 2: 1,2 ; 3: 2
+#
+# =>
+#
+# edges:
+#
+# given 0:
+#   adjacent to: 0
+#
+# given n:
+#   if right edge:
+#     adjacent to: n-1
+#   else if inner:
+#     adjacent to: n-1, n
+#
+
 if __name__ == '__main__':
     pass
